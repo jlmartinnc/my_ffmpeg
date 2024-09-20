@@ -43,7 +43,7 @@ awk 'END{print int($1*24)}' output.txt >> output2.txt
 awk 'NR==FNR{a[NR]=$0;next}{print a [FNR],$0}' output2.txt output.txt > output3.txt
 
 # making commands
-awk '{print "for ((i="int($2*24)"; i<="$1"; i++)); do convert lisa-"$3".png output_$(printf %05d $i).png ; done"}' output3.txt > output.sh
+awk '{print "for ((i="int($2*24)"; i<="$1"; i++)); do magick lisa-"$3".png output_$(printf %05d $i).png ; done"}' output3.txt > output.sh
  
 # add #! /bin/bash to output.sh
 
